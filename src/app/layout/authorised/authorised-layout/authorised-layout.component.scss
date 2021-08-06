@@ -1,0 +1,161 @@
+
+
+.sidebar-nav ul .sidebar-item .sidebar-link {
+    color: #fff;
+    padding: 14px 15px;
+    display: flex;
+    white-space: nowrap;
+    align-items: center;
+    line-height: 25px;
+    opacity: .6;
+}
+.waves-effect {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    overflow: hidden;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    vertical-align: middle;
+    z-index: 1;
+    will-change: opacity,transform;
+    transition: all .1s ease-out;
+}
+
+.active-list-item {
+	color: #3F51B5 !important; /* Note: You could also use a custom theme */
+  }
+.nav-small-cap {
+    font-size: 13px;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    line-height: 30px;
+    margin-top: 10px;
+    color: #2B2d2F;
+    opacity: .7;
+    text-transform: uppercase;
+}
+
+mat-sidenav {
+	background-color: #ffffff !important;
+	width:15%;
+  }
+		
+  .div-scrollable {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 4000px;
+  }
+  
+  mat-toolbar {
+    position: fixed;
+    z-index: 100;
+    position: -webkit-sticky; /* For macOS/iOS Safari */
+    top: 0; /* Sets the sticky toolbar to be on top */
+    z-index: 0; /* Ensure that your app's content doesn't overlap the toolbar */
+  }
+  .icon-text {
+	display: flex;
+	align-items: center;
+  }
+  @media screen and (min-width: 960px) {
+	mat-toolbar {
+	   z-index: 50;
+	}
+  }
+  
+  @media screen and (max-width: 599px) {
+	mat-toolbar {
+	   z-index: 50;
+	}
+  }
+  
+  @media screen and (max-width: 599px) {
+	  .main-sidenav-container {
+		  width: 100%;
+		  height: calc(100vh - 56px);
+		  z-index: 100;
+	  }
+  }
+  
+  @media screen and (min-width: 600px) {
+	.main-sidenav-container {
+		width: 100%;
+		height: calc(100vh - 64px);
+    z-index: 100;
+	}
+
+  }
+
+  // .main1 {
+	// margin: 0;
+	// overflow-x: hidden;
+	// color: #67757c  !important;
+	// background: #f4f6f9;
+  
+	// font-family: Montserrat,sans-serif !important;
+	// font-size: .875rem !important;
+	// font-weight: 400 !important;
+	// line-height: 1.5 !important;
+	// text-align: left !important;
+	// background-color: #f4f6f9 !important;
+  // }
+
+
+.nav-tranparent{
+  background-color: transparent;
+}
+
+.nav-main{
+  background: white;
+}
+
+.sideDropDownLight{
+  color: white; font-size: 50px;padding-top: 2%;
+}
+.sideDropDownBlack{
+  color: black; font-size: 50px !important;padding-top: 2%; 
+}
+
+/* mouse over link */
+a:hover {
+  color: black !important;
+}
+.a1:hover {
+  color: #ffa703!important; 
+}
+
+
+a:not([href]):not([tabindex]) {
+  color: white;
+  text-decoration: none;
+}
+
+.a1:not([href]):not([tabindex]) {
+  color: black;
+  text-decoration: none;
+}
+
+.float{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:40px;
+	background-color:#25d366;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+  font-size:30px;
+	box-shadow: 2px 2px 3px #999;
+  z-index:100;
+}
+
+.my-float{
+	margin-top:16px;
+}

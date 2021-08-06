@@ -1,0 +1,39 @@
+<div class="container-fluid">
+  
+  <div>
+    <div class="row ">
+      <div class="col-12">
+        <h2  class="">Inventory current detail:</h2>
+        <div class="row ">
+          <div class="card-group2"  *ngFor="let sdms of tracking_current">
+            <div class="card" (click)="clickUpdate();">
+              <div class="card-body" style="text-align: center;">
+                
+                <h2 class="card-title">{{sdms.key}}</h2>
+                <p class="card-text" style="color:limegreen;">{{sdms.value}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <h2  class="">Inventory tottal detail:</h2>
+        <div class="row ">
+          <!-- <h2 style="writing-mode: tb-rl;transform: rotate(-180deg);">DEPLOYMENTS</h2>  -->
+          <div class="card-group2"  *ngFor="let sdms of tracking_total">
+            <div class="card" (click)="clickUpdate();" >
+              <div class="card-body" style="text-align: center;">
+                
+                <h2 class="card-title">{{sdms.key}}</h2>
+                <p class="card-text" style="color:limegreen;">{{sdms.value}}</p>
+              </div>
+            </div>
+          </div>
+       
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

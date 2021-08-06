@@ -1,0 +1,273 @@
+<div class="container-fluid">
+    <div class="row ">
+        <div class="col-12" [hidden]="hideTable">
+            <h2 class="">Users:</h2>
+            <div class="row ">
+                <div class="card-group2">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="mat-elevation-z8">
+                                <div class="row ">
+                                    <div class="col-sm-6" class="input">
+                                        <mat-form-field>
+                                            <input matInput (keyup)="applyFilter($event.target.value)"
+                                                placeholder="Filter">
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-sm-6" class="common-button-style"
+                                        style="position: absolute; right: 0;">
+                                        <button (click)="openCreateForm()" class="btn btn-secondary">Add
+                                            User</button>
+                                    </div>
+                                </div>
+
+
+                                <table [hidden]="showNoDataMessage" mat-table #table [dataSource]="dataSource" matSort
+                                    aria-label="Elements">
+
+                                    <ng-container matColumnDef="actions">
+                                        <th mat-header-cell *matHeaderCellDef>Actions</th>
+                                        <td mat-cell *matCellDef="let row">
+                                            <button mat-button (click)="edit(row)">
+                                                <mat-icon>edit</mat-icon>
+                                            </button>
+                                            <button mat-button (click)="delete(row)">
+                                                <mat-icon>delete</mat-icon>
+                                            </button>
+                                        </td>
+                                    </ng-container>
+
+                                    <ng-container *ngFor="let dynamicColumn of dynamicColumns">
+                                        <ng-container matColumnDef="{{dynamicColumn.columnDef}}">
+                                            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                                                {{dynamicColumn.header}}</th>
+                                            <td (click)="getDetail(row)" mat-cell *matCellDef="let row">
+                                                <ng-container *ngIf="dynamicColumn.link; else label">
+                                                    <a [routerLink]="dynamicColumn.link(row)">
+                                                        {{dynamicColumn.cell(row)}}
+                                                    </a>
+                                                </ng-container>
+                                                <ng-template #label>
+                                                    {{dynamicColumn.cell(row)}}
+                                                </ng-template>
+                                            </td>
+                                        </ng-container>
+                                    </ng-container>
+
+                                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                                    <tr class="element-row" mat-row *matRowDef="let row; columns: displayedColumns;">
+                                    </tr>
+                                </table>
+                                <mat-paginator [hidden]="showNoDataMessage" #paginator [length]="dataSource.data.length"
+                                    [pageIndex]="0" [pageSize]="10" [pageSizeOptions]="[10, 50, 100, 250]">
+                                </mat-paginator>
+                                <div class="row ">
+                                    <div class="col" style="text-align: center;">
+                                        <h2 [hidden]="!showNoDataMessage">No User to be displayed at the moment</h2>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-9" [hidden]="hideCreateForm">
+            <h2 class="">Users:</h2>
+            <div class="row ">
+                <div class="card-group2">
+                    <div class="card">
+                        <div class="card-body">
+
+                            <div class="row">
+                                <div class="col-12">
+                                    <div>
+                                        <h2>Create New User</h2>
+                                        <form name="form" [formGroup]="userform"
+                                            (ngSubmit)="userform.valid && onSubmit()">
+                                            <div class="row">
+
+                                                <div class="form-group label-size">
+                                                    <div class="row customform">
+                                                        <div class="col-sm-3">
+                                                            <label for="name">User Name</label>
+                                                        </div>
+                                                        <div class="col-sm-9">
+                                                            <input type="text" class="form-control"
+                                                                formControlName="username"
+                                                                [ngClass]="{'is-invalid':userform.get('username').touched && userform.get('username').invalid}"
+                                                                required />
+                                                            <div class="invalid-feedback">
+                                                                <div>User Name is required</div>
+                                                            </div>
+                                                            <div *ngIf="userNameError"
+                                                                style="color: red; padding-top: 0.4%;  font-size: 0.8rem !important;">
+                                                                <div>Username already exists</div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group label-size">
+                                                    <div class="row customform">
+                                                        <div class="col-sm-3">
+                                                            <label for="name">Email</label>
+                                                        </div>
+                                                        <div class="col-sm-9">
+                                                            <input type="text" class="form-control"
+                                                                formControlName="email"
+                                                                [ngClass]="{'is-invalid':userform.get('email').touched && userform.get('email').invalid}" />
+                                                            <div *ngIf="userform.get('email').touched && userform.get('email').invalid"
+                                                                class="invalid-feedback">
+                                                                <div *ngIf="userform.get('email').errors.required">Email
+                                                                    is required</div>
+                                                                <div *ngIf="userform.get('email').errors.email">Email
+                                                                    must be a valid email Address</div>
+
+                                                            </div>
+                                                            <div *ngIf="userEmailError"
+                                                                style="color: red; padding-top: 0.4%;  font-size: 0.8rem !important;">
+                                                                <div>Email already exists</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group label-size" *ngIf="selectedRole">
+                                                    <div class="row customform">
+                                                        <div class="col-sm-3">
+                                                            <label for="name">User Role</label>
+                                                        </div>
+                                                        <div class="col-sm-9">
+
+                                                            <select class="custom-select" placeholder="Roles"
+                                                                formControlName="role"
+                                                                [ngClass]="{'is-invalid':userform.get('role').touched && userform.get('role').invalid}">
+                                                                <div *ngIf="userform.get('role').touched && userform.get('role').invalid"
+                                                                    class="invalid-feedback">
+                                                                    <div *ngIf="userform.get('role').errors.required">
+                                                                        Role is not selected</div>
+                                                                </div>
+                                                                <option *ngFor="let role of roles" [value]="role.key">
+                                                                    {{role.value}}</option>
+                                                            </select>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group label-size" *ngIf="selectedRole">
+                                                    <div class="row customform">
+                                                        <div class="col-sm-3">
+                                                            <label for="name">Organization List</label>
+                                                        </div>
+                                                        <div class="col-sm-9">
+
+                                                            <select class="custom-select" placeholder="List"
+                                                                formControlName="organization_id"
+                                                                [ngClass]="{'is-invalid':userform.get('organization_id').touched && userform.get('organization_id').invalid}">
+                                                                <div *ngIf="userform.get('organization_id').touched && userform.get('organization_id').invalid"
+                                                                    class="invalid-feedback">
+                                                                    <div *ngIf="userform.get('organization_id').errors.required">
+                                                                        Organization is not selected</div>
+                                                                </div>
+                                                                <option *ngFor="let role of org_list" [value]="role.key">
+                                                                    {{role.value}}</option>
+                                                            </select>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group label-size">
+                                                    <div class="row customform">
+                                                        <div class="col-sm-3">
+                                                            <label for="name">Organization Role</label>
+                                                        </div>
+                                                        <div class="col-sm-9">
+                                                            <select class="custom-select" placeholder="Roles"
+                                                                formControlName="organization_role"
+                                                                [ngClass]="{'is-invalid':userform.get('organization_role').touched && userform.get('organization_role').invalid}">
+                                                                <div *ngIf="userform.get('organization_role').touched && userform.get('organization_role').invalid"
+                                                                    class="invalid-feedback">
+                                                                    <div
+                                                                        *ngIf="userform.get('organization_role').errors.required">
+                                                                        Role
+                                                                        is not selected</div>
+
+                                                                </div>
+
+                                                                <option *ngFor="let role of org_roles"
+                                                                    [value]="role.key">
+                                                                    {{ role.value }}</option>
+                                                            </select>
+                                                            <div *ngIf="userRoleError"
+                                                                style="color: red; padding-top: 0.4%;  font-size: 0.8rem !important;">
+                                                                <div>Manager Role already exists</div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="row button">
+                                                    <div style="padding-right: 1.5%;">
+                                                        <button type="submit" class="btn btn-primary"
+                                                            [disabled]="!userform.valid">Save</button>
+                                                    </div>
+                                                    <div class="customform">
+                                                        <button (click)="cancel()" type="button"
+                                                            class="btn btn-secondary">Cancel</button>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                        </form>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-9" [hidden]="hideDetailForm">
+            <h2 class="">Organizations:</h2>
+            <div class="row ">
+                <div class="card-group2">
+                    <div class="card">
+                        <div class="card-body">
+
+                            <div class="row">
+                                <app-user-detail *ngIf="!hideDetailForm" [rowData]="rowData"
+                                    (resetDetailView)="resetDetailView($event)"></app-user-detail>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-9" [hidden]="hideEditForm">
+            <h2 class="">Users:</h2>
+            <div class="row ">
+                <div class="card-group2">
+                    <div class="card">
+                        <div class="card-body">
+
+                            <div class="row">
+                                <app-user-edit *ngIf="!hideEditForm" [rowData]="rowData"
+                                    (resetEditView)="resetEditView($event)"></app-user-edit>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

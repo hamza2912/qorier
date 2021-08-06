@@ -1,0 +1,58 @@
+.page-view {
+    &.texture-background {
+      background: black !important;
+
+    }
+}
+
+
+  @media screen and (min-width: 960px) {
+
+    h1{
+        margin-top: 2%; margin-left: 5%;  text-align: center;
+        color: #ffa703!important;
+        font-size: 1em;
+    }
+	div.row1
+  {
+      display: block;
+      text-align: center;
+      margin-top: 10%;
+      margin-right: 25%;
+      margin-left: 20%;
+      margin-bottom: 30%;
+  
+  }
+  }
+  
+@media screen and (max-width: 599px) {
+    
+
+   
+	div.row1
+  {
+    display: block;
+    text-align: center;
+    margin-top: 150%;
+    margin-right: 5%;
+    margin-left: -100%;
+    margin-bottom: -9%;
+  }
+  h1{
+    margin-top: 30%; margin-left: 6%;  text-align: center; margin-right: -150%; 
+    // background: black;
+    // -webkit-background-clip: text;
+    // -webkit-text-fill-color: transparent;
+    font-size: 2em;
+}
+  }
+
+.text-setting{
+    font-size: 1.4em;
+    color: #ffa703!important;
+    font-weight: 200;
+    text-align: center;
+}
+.delivery{
+    padding-right: 10%;
+}

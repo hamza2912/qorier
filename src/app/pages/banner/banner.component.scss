@@ -1,0 +1,130 @@
+
+
+.page-view {
+    &.texture-background {
+      background: #ffa703!important;
+
+      &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: -10%;
+        left: 0%;
+        background-repeat: no-repeat;
+        background-image: url('/assets/images/5227.png');
+        width: 100%;
+        height: 150%;
+        opacity: 0.13;
+      }
+    }
+}
+
+
+
+  @media screen and (min-width: 960px) {
+
+    h1{
+        margin-top: 35%; margin-left: 16%;  text-align: left;
+        color: white;
+        font-size: 3em;
+    }
+	div.row1
+  {
+      display: block;
+      text-align: center;
+      margin-top: 15%;
+      margin-right: 25%;
+      margin-left: 20%;
+      margin-bottom: 30%;
+  
+  }
+  }
+  
+@media screen and (max-width: 599px) {
+    
+.page-view {
+    &.texture-background {
+    //   background: linear-gradient(to left, #ffe139 , #fdb540) !important;
+    background: #ffec00!important;
+
+      &:before {
+        content: "";
+        display: none;
+        position: absolute;
+        top: -30%;
+        left: 0%;
+        background-repeat: no-repeat;
+        background-image: url('/assets/images/5227.png');
+        width: 100%;
+        height: 150%;
+        opacity: 0.2;
+      }
+    }
+}
+
+   
+	div.row1
+  {
+    display: block;
+    text-align: center;
+    margin-top: 150%;
+    margin-right: 5%;
+    margin-left: -100%;
+    margin-bottom: -9%;
+  }
+  h1{
+    margin-top: 30%; margin-left: 6%;  text-align: left; margin-right: -150%; 
+    // background: black;
+    // -webkit-background-clip: text;
+    // -webkit-text-fill-color: transparent;
+    font-size: 2em;
+}
+  }
+
+  form
+  {
+      
+      margin-left: auto;
+      margin-right: auto;
+      text-align: left;
+  }
+  #btn
+  {
+    background: linear-gradient(to left, #ffe139 , #fdb540) !important;
+      width: 100%;
+      color: black;
+      
+  }
+  #btnDelete
+  {
+      background-color: #da3810 ;
+      width: 100%;
+      
+  }
+  .mat-raised-button.mat-primary{
+      background-color: #0F75BC;
+      color:white;
+  }
+  .mat-raised-button.mat-disabled{
+      background-color: silver;
+      color:black;
+  }
+  
+  .container-fluid {
+      padding: 20px;
+      min-height: calc(100vh - 180px);
+    }
+
+h2{
+    margin-top: 6%; margin-left: 6%;  text-align: left;
+    color: #ffa703!important;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.letsTalk{
+    width:20%;
+    padding-top: 15%;
+    position: absolute;
+
+}

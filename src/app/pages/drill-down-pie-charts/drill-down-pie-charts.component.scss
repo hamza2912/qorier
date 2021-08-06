@@ -1,0 +1,33 @@
+.dashboard-cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content:flex-start;
+    margin: 0 -15px;
+    >.card {
+      margin: 15px;
+    }
+  }
+  .chart {
+    float: right; 
+    width: calc(205vh - 750px);
+  }
+  @media screen and (min-width: 1000px) {
+   .chart {
+    float: right; 
+    width: calc(205vh - 750px);
+  }
+  }
+  @media screen and (min-width: 1500px) {
+    .chart {
+     float: right; 
+     width: calc(205vh - 945px);
+   }
+   }
+    
+    @media screen and (max-width: 599px) {
+      .chart {
+        float: right; 
+        width: calc(205vh - 700px);
+      }
+    }

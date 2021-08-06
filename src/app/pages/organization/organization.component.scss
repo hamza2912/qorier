@@ -1,0 +1,100 @@
+
+
+  .card-group {
+    margin-bottom: 20px;
+    padding-left: .6%;
+    font-size: 1.675rem !important
+  }
+  
+  .card-group2 {
+    margin-bottom: 20px;
+    padding-left: .6%;
+    width: 90%;
+    font-size: 1.875rem !important
+  }
+  
+  .input {
+    padding-top: 2%;
+    padding-left: 4%;
+    font-size: 1.875rem !important
+  }
+
+  
+  table {
+    width: 100%;
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 80%;
+  }
+  
+  td, th {
+    width: 25%;
+  }
+
+  .common-button-style{
+    padding-right: 4%;
+    padding-top: 2%;
+    
+  }
+  .common-button {
+    border-radius: 4px;
+    line-height: 2.5;
+    float: "right";
+  }
+
+  .container-fluid {
+    padding: 20px;
+    min-height: calc(100vh - 180px);
+  }
+
+  .label-size{
+    font-size: 1rem !important;
+    width: 100%;
+  }
+
+  .customform{
+    padding-right: 3%;
+    padding-left: 1.2%;
+  }
+
+  .element-row {
+    position: relative;
+  }
+  
+  .element-row:not(.expanded) {
+    cursor: pointer;
+  }
+  
+  .element-row:not(.expanded):hover {
+    background: #d8d8d8;
+  }
+  
+  .element-row.expanded {
+    border-bottom-color: transparent;
+  }
+
+  .button {
+    float: right; 
+    width: calc(105vh - 450px);
+  }
+  @media screen and (min-width: 1000px) {
+    .button {
+     float: right; 
+     width: calc(105vh - 700px);
+   }
+   }
+   @media screen and (min-width: 1500px) {
+     .button {
+      float: right; 
+      width: calc(105vh - 870px);
+    }
+    }
+    
+    @media screen and (max-width: 599px) {
+      .button {
+        float: right; 
+        width: calc(105vh - 700px);
+      }
+    }

@@ -1,0 +1,77 @@
+:host {
+  background: #343a40;
+}
+
+#sidebar {
+min-width: 200px;
+max-width: 200px;
+min-height: 100vh;
+color: #fff;
+transition: all 0.3s;
+font-weight: 300;
+font-size: 1rem;
+line-height: 1.5;
+}
+
+#sidebar.hidden {
+  margin-left: -200px;
+}
+
+a[data-toggle="collapse"] {
+  position: relative;
+}
+
+@media (max-width: 575px) {
+  #sidebar {
+      margin-left: -200px;
+  }
+  #sidebar.hidden {
+      margin-left: 0;
+  }
+  .main-container {
+    margin-left: 0px !important;
+}
+}
+
+a, a:hover, a:focus {
+  color: inherit;
+}
+
+#sidebar .sidebar-header {
+  padding: 20px;
+}
+
+#sidebar ul li a {
+padding: 15px;
+display: block;
+width: 100%;
+&:hover {
+  background-color: rgba(0, 130, 236, 0.1);
+}
+}
+
+hr {
+border-top: 1px solid #fff;
+margin-top: 0;
+}
+
+.main-container{
+  margin-top: 60px;
+  margin-left: 235px;
+  padding: 15px;
+  -ms-overflow-x: hidden;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  position: relative;
+  overflow: hidden;
+
+}
+.icon-text {
+  display: flex;
+  align-items: center;
+}
+@media screen and (max-width: 992px) {
+  .main-container {
+      margin-left: 0px !important;
+  }
+}

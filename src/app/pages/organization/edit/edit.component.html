@@ -1,0 +1,79 @@
+<div class="col-12">
+    <div>
+        <h2>Edit rganization</h2>
+        <form name="form" [formGroup]="orgform" (ngSubmit)="orgform.valid && onSubmit()">
+            <div class="row">
+
+                <div class="form-group label-size">
+                    <div class="row customform">
+                        <div class="col-sm-3">
+                            <label for="name">Organization Name</label>
+                        </div>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control"
+                                formControlName="name"
+                                [ngClass]="{'is-invalid':orgform.get('name').touched && orgform.get('name').invalid}"
+                                required />
+                            <div class="invalid-feedback">
+                                <div>Organization Name is required</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group label-size">
+                    <div class="row customform">
+                        <div class="col-sm-3">
+                            <label for="name">Email</label>
+                        </div>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control"
+                                formControlName="email"
+                                [ngClass]="{'is-invalid':orgform.get('email').touched && orgform.get('email').invalid}" />
+                            <div *ngIf="orgform.get('email').touched && orgform.get('email').invalid"
+                                class="invalid-feedback">
+                                <div *ngIf="orgform.get('email').errors.required">Email
+                                    Name is required</div>
+                                <div *ngIf="orgform.get('email').errors.email">Email
+                                    must be a valid email Address</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group label-size">
+                    <div class="row customform">
+                        <div class="col-sm-3">
+                            <label for="name">Address</label>
+                        </div>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control " formControlName="address" />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group label-size">
+                    <div class="row customform">
+                        <div class="col-sm-3">
+                            <label for="name">Phone number</label>
+                        </div>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control " formControlName="phone_number" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row button"  >
+                    <div style="padding-right: 1.5%;">
+                        <button type="submit" class="btn btn-primary"
+                            [disabled]="!orgform.valid">Save</button>
+                    </div>
+                    <div class="customform">
+                        <button (click)="back()" type="button"
+                            class="btn btn-secondary">Cancel</button>
+                    </div>
+                </div>
+
+            </div>
+
+        </form>
+    </div>
+</div>

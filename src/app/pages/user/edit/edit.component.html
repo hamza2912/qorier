@@ -1,0 +1,113 @@
+<div class="col-12">
+    <div>
+        <h2>Edit User</h2>
+        <form name="form" [formGroup]="userform" (ngSubmit)="userform.valid && onSubmit()">
+            <div class="row">
+
+
+                <div class="form-group label-size">
+                    <div class="row customform">
+                        <div class="col-sm-3">
+                            <label for="name">User Name</label>
+                        </div>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" formControlName="username"
+                                [ngClass]="{'is-invalid':userform.get('username').touched && userform.get('username').invalid}"
+                                required />
+                            <div class="invalid-feedback">
+                                <div>User Name is required</div>
+                            </div>
+                            <div *ngIf="userNameError"
+                                style="color: red; padding-top: 0.4%;  font-size: 0.8rem !important;">
+                                <div>User Name is not unique</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group label-size">
+                    <div class="row customform">
+                        <div class="col-sm-3">
+                            <label for="name">Email</label>
+                        </div>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" formControlName="email"
+                                [ngClass]="{'is-invalid':userform.get('email').touched && userform.get('email').invalid}" />
+                            <div *ngIf="userform.get('email').touched && userform.get('email').invalid"
+                                class="invalid-feedback">
+                                <div *ngIf="userform.get('email').errors.required">Email
+                                    is required</div>
+                                <div *ngIf="userform.get('email').errors.email">Email
+                                    must be a valid email Address</div>
+
+                            </div>
+                            <div *ngIf="userEmailError"
+                                style="color: red; padding-top: 0.4%;  font-size: 0.8rem !important;">
+                                <div>Email is not unique</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group label-size" *ngIf="selectedRole">
+                    <div class="row customform">
+                        <div class="col-sm-3">
+                            <label for="name">User Role</label>
+                        </div>
+                        <div class="col-sm-9">
+
+                            <select class="custom-select" placeholder="Roles" formControlName="role"
+                                [ngClass]="{'is-invalid':userform.get('role').touched && userform.get('role').invalid}">
+                                <div *ngIf="userform.get('role').touched && userform.get('role').invalid"
+                                    class="invalid-feedback">
+                                    <div *ngIf="userform.get('role').errors.required">
+                                        Role is not selected</div>
+                                </div>
+                                <option *ngFor="let role of roles" [value]="role.key">
+                                    {{role.value}}</option>
+                            </select>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group label-size">
+                    <div class="row customform">
+                        <div class="col-sm-3">
+                            <label for="name">Organization Role</label>
+                        </div>
+                        <div class="col-sm-9">
+                            <select class="custom-select" placeholder="Roles" formControlName="organization_role"
+                                [ngClass]="{'is-invalid':userform.get('organization_role').touched && userform.get('organization_role').invalid}">
+                                <div *ngIf="userform.get('organization_role').touched && userform.get('organization_role').invalid"
+                                    class="invalid-feedback">
+                                    <div *ngIf="userform.get('organization_role').errors.required">
+                                        Role
+                                        is not selected</div>
+
+                                </div>
+                                <option *ngFor="let role of org_roles" [value]="role.key">
+                                    {{ role.value }}</option>
+                            </select>
+                            <div *ngIf="userRoleError"
+                                style="color: red; padding-top: 0.4%;  font-size: 0.8rem !important;">
+                                <div>Manager role already exists</div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row button">
+                    <div style="padding-right: 1.5%;">
+                        <button type="submit" class="btn btn-primary" [disabled]="!userform.valid">Save</button>
+                    </div>
+                    <div class="customform">
+                        <button (click)="back()" type="button" class="btn btn-secondary">Cancel</button>
+                    </div>
+                </div>
+
+            </div>
+
+        </form>
+    </div>
+</div>

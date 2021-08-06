@@ -1,0 +1,70 @@
+<mat-toolbar class=" " style="height: 10%;" [ngClass]="colorTransparent == false ? 'nav-main mat-elevation-z6': 'nav-main'">
+  <!-- <button mat-icon-button >
+    <mat-icon>menu</mat-icon>
+    </button>  -->
+  <!-- <div class="col-sm-3" style=" font-family:lato!important; color: white;" *ngIf="colorTransparent" ><img style="width: 50%;height: 40%; padding-top: 2%;" src="/assets/images/image.png" alt="image"><span style="padding-left: 2% ;"></span></div> -->
+    <div class="col-sm-3" style=" font-family:lato!important; color: black;"  ><img style="width: 50%;height: 40%; padding-top: 2%; " src="/assets/images/main.png" alt="image">
+  </div>
+  <div class="col-sm-6" style=" font-family: sans-serif; ">
+    <a class="a1" style="float: right; padding-left: 2%;"(click)="goDown1('why')">Why Us</a>
+    <a class="a1" style="float: right; padding-left: 2%;"(click)="goDown1('feature')">Features</a>
+    <a class="a1" style="float: right; padding-left: 2%;"(click)="goDown1('working')">Working</a>
+  </div>
+  <div class="col-sm-3">
+    <mat-list-item style="margin-left: 0%; float: right;">
+      <button mat-menu-item [matMenuTriggerFor]="billsmenu"><span class="sideDropDownBlack" class="material-icons sideDropDownBlack">
+        view_headline
+        </span></button>
+    </mat-list-item>
+    <mat-menu #billsmenu="matMenu" [overlapTrigger]="false">
+      <!-- <button style="outline: none;" mat-menu-item (click)="logout()">
+      Logout
+      </button> -->
+    </mat-menu>
+  </div>
+  
+</mat-toolbar>
+
+
+
+<!-- <mat-sidenav-container class="main-sidenav-container main1"> -->
+  <!-- <header class="topbar"> 
+<app-authorised-top-nav></app-authorised-top-nav>
+</header> -->
+
+  <!-- <mat-sidenav class=" navbar-light" [mode]="mode" [opened]=true [fixedInViewport]="true" [fixedTopGap]="layoutGap">
+    <mat-nav-list>
+      <a mat-list-item routerLink="dashboard" routerLinkActive="active-list-item">
+        <h2 matLine>Dashboard</h2>
+        <mat-icon matListIcon>dashboard</mat-icon>
+      </a>
+      <a mat-list-item routerLink="yearly-coverage" routerLinkActive="active-list-item">
+        <h2 matLine>Yearly Coverage </h2>
+        <mat-icon matListIcon>assessment</mat-icon>
+      </a>
+      <a mat-list-item routerLink="organization" routerLinkActive="active-list-item" *ngIf="adminRole">
+        <h2 matLine>Organization</h2>
+        <mat-icon matListIcon>assessment</mat-icon>
+      </a>
+      <a  mat-list-item routerLink="user" routerLinkActive="active-list-item" *ngIf="userRole">
+        <h2 matLine>User</h2>
+        <mat-icon matListIcon>groups</mat-icon>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+
+
+
+
+
+</mat-sidenav-container> -->
+<div class="main main1">
+  <app-page-content></app-page-content>
+</div>
+<a href="https://api.whatsapp.com/send?
+         phone=7310747066
+         &text=Hola%information%."
+   		 class="float" target="_blank">
+<i class="fa fa-whatsapp my-float"></i>
+</a>

@@ -1,0 +1,40 @@
+.dashboard-cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content:flex-start;
+  margin: 0 -15px;
+  >.card {
+    margin: 15px;
+  }
+}
+.container-fluid {
+  padding: 20px;
+  min-height: calc(100vh - 180px);
+}
+
+.prop{
+  text-align: center;
+}
+
+.card-group {
+  margin-bottom: 20px;
+  padding-left: .6%;
+  font-size: 1.675rem !important
+}
+
+.card-group2 {
+  margin-bottom: 20px;
+  padding-left: .6%;
+  width: 15%;
+  height: 25%;
+  font-size: 1.875rem !important;
+  cursor: pointer;
+}
+
+
+
+.card-group3 {
+  text-align: right;
+  font-size: 0.875rem !important
+}

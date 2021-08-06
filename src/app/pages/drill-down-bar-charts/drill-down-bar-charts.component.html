@@ -1,0 +1,50 @@
+<!-- <div class="container-fluid">
+     <h2 class="mb-5 mt-4">Dashboard</h2> -->
+    <!-- <div>
+        <div class="dashboard-cards">
+            <div class="card" >
+                <div class="card-header" style="text-align: center;">
+                    Indivisual Subsystem Information
+                </div>
+                <div class="card-body" style="width:38rem;">
+
+                    <highcharts-chart [Highcharts]="Highcharts" [options]="subsystmeChartByNameOptions"
+                        [constructorType]="chartConstructor" [(update)]="updateSubSystemFlagByName"
+                        [callbackFunction]="chartCallback" [oneToOne]="true"
+                        style="width: 100%; height: 500px; display: block;">
+                    </highcharts-chart>
+                    <mat-form-field>
+                        <mat-select placeholder="SybSystems" [(ngModel)]="selectedSubsystem"
+                            (ngModelChange)="onSubSystemSelection()">
+                            <mat-option *ngFor="let subsystem of Subsystems" [value]="subsystem.value">
+                                {{ subsystem.viewValue }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="card" >
+                <div class="card-header" style="text-align: center;">
+                    Indivisual Subsystem Host Information
+                </div>
+                <div class="card-body" style="width: 38rem;">
+
+                    <highcharts-chart [Highcharts]="Highcharts" [options]="subsystmeChartForHostsByNameOptions"
+                        [constructorType]="chartConstructor" [(update)]="updateSubSystemForHostsFlagByName"
+                        [callbackFunction]="chartCallback" [oneToOne]="true"
+                        style="width: 100%; height: 500px; display: block;">
+                    </highcharts-chart>
+                    <mat-form-field>
+                        <mat-select placeholder="SybSystems" [(ngModel)]="selectedSubsystemForHost"
+                            (ngModelChange)="onSubSystemSelectionForHost()">
+                            <mat-option *ngFor="let subsystem of Subsystems" [value]="subsystem.value">
+                                {{ subsystem.viewValue }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>  -->

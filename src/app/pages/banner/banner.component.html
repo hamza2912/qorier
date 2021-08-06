@@ -1,0 +1,72 @@
+<div #banner  class="page-view texture-background">
+    <div class="container-fluid">
+
+        <div class="row ">
+            <div class="col-6" style="float: right !important;">
+                <h1 class=""><span style=" text-transform: uppercase; font-weight: bold;">Are you struggling with</span>   <br>  <br>
+                    <span style="font-family:lato!important; font-weight: 0; ">Delivery, Warehouse & Logistic</span><span style=" text-transform: uppercase; font-weight: bold;"> <br> <br> in Qatar?</span> <br> <br> 
+                    </h1>
+            </div>
+            <div class="col-6" style="float: right !important;">
+               <img class="letsTalk" alt="letstalk" src="/assets/images/letstalk.svg" title="fulfillment Dubai">
+
+                
+                <div class="row1">
+        
+                    <div class="card-group">
+                        <div class="card" style="background: white;border-radius: 2.25rem !important;">
+                            <h2 class="title">Hey There!</h2>
+                            <h4 style="  margin-left: 6%;  text-align: left; margin-bottom: 0%;">Fill out this form and get a call from one of our sales executives to arrange a meeting,
+                            </h4>
+                            <div class="card-body" style="text-align: center;">
+                                <form [formGroup]="accountForm" >
+                                    <mat-form-field appearance="outline" floatLabel="always" style="width: 100%;">
+                                        <mat-label>Full Name</mat-label>
+                                        <input type="text" matInput placeholder="full name" formControlName="full_name"
+                                            [ngClass]="{ 'is-invalid': full_name.touched && full_name.errors }">
+                                        <mat-error *ngIf="full_name.touched && full_name.errors?.required">name
+                                            name is required</mat-error>
+                                    </mat-form-field>
+    
+                                    <mat-form-field appearance="outline" floatLabel="always" style="width: 100%;">
+                                        <mat-label>Email ID</mat-label>
+                                        <input type="text" matInput placeholder="id@account.com" formControlName="email"
+                                            [ngClass]="{ 'is-invalid': email.touched && email.errors }">
+                                        <mat-error *ngIf="email.touched && email.errors?.required">email
+                                            required</mat-error>
+                                    </mat-form-field>
+    
+                                    <mat-form-field appearance="outline" floatLabel="always" style="width: 100%;">
+                                        <mat-label>Mobile Number</mat-label>
+                                        <input type="text" matInput placeholder="mobile number" formControlName="mobile"
+                                            [ngClass]="{ 'is-invalid': mobile.touched && mobile.errors }">
+                                        
+                                        <mat-error *ngIf="mobile.touched && mobile.errors?.required">phone number
+                                            is required</mat-error>
+                                    </mat-form-field>
+
+                                    <mat-form-field appearance="outline" floatLabel="always" style="width: 100%;">
+                                        <mat-label>Company Name</mat-label>
+                                        <input type="text" matInput placeholder="comapny" formControlName="company"
+                                            [ngClass]="{ 'is-invalid': company.touched && company.errors }">
+
+                                        <mat-error *ngIf="company.touched && company.errors?.required">company name
+                                            is required</mat-error>
+                                    </mat-form-field>
+    
+                                    <div  style="padding-bottom: 5%; padding-top: 3%;">
+                                        <button [disabled]="!accountForm.valid" id="btn" mat-raised-button color="primary" (click)="onSave()"
+                                            mat-button>Submit</button>
+                                    </div>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+    </div>
+ 
+  </div>

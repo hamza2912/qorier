@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-qorier-dev-44521-authRole",
+      "UnauthRoleArn": "arn:aws:iam::688159117540:role/amplify-qorier-dev-44521-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::688159117540:role/amplify-qorier-dev-44521-authRole",
+      "Region": "ap-south-1",
+      "DeploymentBucketName": "amplify-qorier-dev-44521-deployment",
+      "UnauthRoleName": "amplify-qorier-dev-44521-unauthRole",
+      "StackName": "amplify-qorier-dev-44521",
+      "StackId": "arn:aws:cloudformation:ap-south-1:688159117540:stack/amplify-qorier-dev-44521/0b762a70-f57e-11eb-9701-02f7e783c796",
+      "AmplifyAppId": "d134ge2edx7ma3"
+    }
+  }
+}
