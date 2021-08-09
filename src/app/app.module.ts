@@ -71,6 +71,9 @@ import { FullfilmentComponent } from './pages/fullfilment/fullfilment.component'
 import { CloudDashboardComponent } from './pages/cloud-dashboard/cloud-dashboard.component';
 import { FooterComponent } from './pages/footer/footer.component';
 import { WhatYouGetComponent } from './pages/what-you-get/what-you-get.component';
+import { AboutComponent } from './pages/about/about.component';
+import { ContactComponent } from './pages/contact/contact.component';
+import { ServicepageComponent } from './pages/servicepage/servicepage.component';
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
   wheelSpeed: 2,
@@ -110,7 +113,10 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     FullfilmentComponent,
     CloudDashboardComponent,
     FooterComponent,
-    WhatYouGetComponent
+    WhatYouGetComponent,
+    AboutComponent,
+    ContactComponent,
+    ServicepageComponent
   ],
   imports: [
     BrowserModule,

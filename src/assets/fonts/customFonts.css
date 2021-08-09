@@ -2,3 +2,17 @@
     font-family: lato;
     src: url(/assets/fonts/MarckScript-Regular.ttf) format("opentype");
   }
+
+@font-face {
+    font-family: 'TrashHand';
+    font-style: normal;
+    font-weight: normal;
+    src: local('TrashHand'), url('TrashHand.woff') format('woff');
+    }
+
+@font-face {
+    font-family: 'Verveine Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Verveine Regular'), url('VerveineRegular.woff') format('woff');
+    }

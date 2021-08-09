@@ -1,22 +1,35 @@
-<mat-toolbar class=" " style="height: 10%;" [ngClass]="colorTransparent == false ? 'nav-main mat-elevation-z6': 'nav-main'">
+<mat-toolbar class="flex flex-row justify-between lg:px-10 px-2 mat-height" [ngClass]="colorTransparent == false ? 'nav-main mat-elevation-z6': 'nav-main'">
   <!-- <button mat-icon-button >
     <mat-icon>menu</mat-icon>
     </button>  -->
   <!-- <div class="col-sm-3" style=" font-family:lato!important; color: white;" *ngIf="colorTransparent" ><img style="width: 50%;height: 40%; padding-top: 2%;" src="/assets/images/image.png" alt="image"><span style="padding-left: 2% ;"></span></div> -->
-    <div class="col-sm-3" style=" font-family:lato!important; color: black;"  ><img style="width: 50%;height: 40%; padding-top: 2%; " src="/assets/images/main.png" alt="image">
+    <div class="w-1/4" style=" font-family:lato!important; color: black;"  >
+      <!-- <img style="width: 50%;height: 40%; padding-top: 2%; " src="/assets/images/main.png" alt="image"> -->
+      <a href="/">
+      <img class='lg:w-2/5 w-full h-auto' src="/assets/images/qorier_updated_logo.png" alt="image">
+      </a>
   </div>
-  <div class="col-sm-6" style=" font-family: sans-serif; ">
-    <a class="a1" style="float: right; padding-left: 2%;"(click)="goDown1('why')">Why Us</a>
-    <a class="a1" style="float: right; padding-left: 2%;"(click)="goDown1('feature')">Features</a>
-    <a class="a1" style="float: right; padding-left: 2%;"(click)="goDown1('working')">Working</a>
-  </div>
-  <div class="col-sm-3">
-    <mat-list-item style="margin-left: 0%; float: right;">
-      <button mat-menu-item [matMenuTriggerFor]="billsmenu"><span class="sideDropDownBlack" class="material-icons sideDropDownBlack">
+ 
+  <div class="w-1/2 flex items-center justify-end">
+    <div class="flex flex-row items-center" [ngClass]="colorTransparent == false ? 'text-black font-medium': 'text-black font-medium'" style="font-family: 'Poppins', sans-serif;">
+      <a class="a1 text-xl mr-10 cursor-pointer hidden lg:flex text-black no-underline" href="/">Home</a>
+      <a class="a1 text-xl mr-10 cursor-pointer hidden lg:flex text-black no-underline" href="/#/services">Services</a>
+      <a [ngClass]="colorTransparent == false ? 'border-black': 'border-black'" class="a1 a1_border text-xl mr-10 cursor-pointer border-2  rounded-xl px-2 py-1 hidden lg:flex text-black no-underline" href="#/about">About Us</a>
+    </div>
+    <mat-list-item>
+      <button mat-menu-item [matMenuTriggerFor]="billsmenu"><span [ngClass]="colorTransparent == false ? 'material-icons sideDropDownBlack': 'material-icons sideDropDownBlack'" >
         view_headline
         </span></button>
     </mat-list-item>
     <mat-menu #billsmenu="matMenu" [overlapTrigger]="false">
+      <div class="flex flex-col w-48 pl-6">
+        <a class="a1 text-xl mr-10 cursor-pointer hover:no-underline lg:hidden" style="color: black;" href="/">Home</a>
+        <a class="a1 text-xl mr-10 cursor-pointer hover:no-underline lg:hidden" style="color: black;" href="/#/services">Services</a>
+        <a class="a1 text-xl mr-10 cursor-pointer hover:no-underline lg:hidden" style="color: black;" href="#/about">About Us</a>
+        <a class="a1 text-xl mr-10 cursor-pointer hover:no-underline" style="color: black;" href="#whyus">Why Us</a>
+        <a class="a1 text-xl mr-10 cursor-pointer hover:no-underline" style="color: black;" href='#features'>Features</a>
+        <a class="a1 text-xl mr-10 cursor-pointer hover:no-underline" style="color: black;" href='#working'>Working</a>
+      </div>
       <!-- <button style="outline: none;" mat-menu-item (click)="logout()">
       Logout
       </button> -->

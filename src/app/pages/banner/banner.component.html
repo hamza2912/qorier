@@ -1,22 +1,22 @@
-<div #banner  class="page-view texture-background">
+<div #banner  class="page-view texture-background w-full">
     <div class="container-fluid">
 
         <div class="row ">
-            <div class="col-6" style="float: right !important;">
-                <h1 class=""><span style=" text-transform: uppercase; font-weight: bold;">Are you struggling with</span>   <br>  <br>
-                    <span style="font-family:lato!important; font-weight: 0; ">Delivery, Warehouse & Logistic</span><span style=" text-transform: uppercase; font-weight: bold;"> <br> <br> in Qatar?</span> <br> <br> 
+            <div data-aos='fade-right' class="lg:w-1/2 w-full" style="float: right !important;">
+                <h1 class=""><span style="text-transform: uppercase; font-weight: bold; font-family: 'Poppins', sans-serif;">Are you struggling with</span>   <br>  <br>
+                    <span style="font-family:'Verveine Regular'!important; font-weight: 0; color: black; font-size: 1.2em; ">Delivery, Warehouse & Logistic</span><span style=" text-transform: uppercase; font-weight: bold;"> <br> <br> in Qatar?</span> <br> <br> 
                     </h1>
             </div>
-            <div class="col-6" style="float: right !important;">
-               <img class="letsTalk" alt="letstalk" src="/assets/images/letstalk.svg" title="fulfillment Dubai">
+            <div class="lg:w-1/2 w-full" style="float: right !important;">
+               <img class="letsTalk rotate hidden lg:block" alt="letstalk" src="/assets/images/letstalk.svg" title="fulfillment Dubai">
 
                 
                 <div class="row1">
         
                     <div class="card-group">
-                        <div class="card" style="background: white;border-radius: 2.25rem !important;">
-                            <h2 class="title">Hey There!</h2>
-                            <h4 style="  margin-left: 6%;  text-align: left; margin-bottom: 0%;">Fill out this form and get a call from one of our sales executives to arrange a meeting,
+                        <div class="card" style="background: white;border-radius: 1.25rem !important;">
+                            <h2 style="font-family: 'Poppins', sans-serif;" class="title">Hey There!</h2>
+                            <h4 style="margin-left: 6%;  text-align: left; margin-bottom: 0%;">Fill out this form and get a call from one of our sales executives to arrange a meeting,
                             </h4>
                             <div class="card-body" style="text-align: center;">
                                 <form [formGroup]="accountForm" >
@@ -54,8 +54,8 @@
                                             is required</mat-error>
                                     </mat-form-field>
     
-                                    <div  style="padding-bottom: 5%; padding-top: 3%;">
-                                        <button [disabled]="!accountForm.valid" id="btn" mat-raised-button color="primary" (click)="onSave()"
+                                    <div style="padding-bottom: 5%; padding-top: 3%;">
+                                        <button style="border-radius: 2.5rem" [disabled]="!accountForm.valid" id="btn" mat-raised-button color="primary" (click)="onSave()"
                                             mat-button>Submit</button>
                                     </div>
 

@@ -63,6 +63,7 @@ export class AuthorisedLayoutComponent  implements AfterViewInit {
   }
 
   goDown1(value) {
+    console.log("here");
    let target = ''
    if(value==='why'){
     target="whyus"
@@ -75,7 +76,6 @@ export class AuthorisedLayoutComponent  implements AfterViewInit {
    }
     document.getElementById(target).scrollIntoView({
       behavior: "smooth",
-      block: "center",
       inline: "start"
     });
   }
