@@ -142,3 +142,19 @@ img {
   }
 
 }
+
+.h-work-item{
+  height: auto;
+}
+
+@media not all and (min-resolution:.001dpcm) { 
+  @supports (-webkit-appearance:none) {
+    .h-work-item{
+      height: 340px !important;
+
+      @media screen and (max-width: 599px) {
+        height: 200px !important;
+      }
+    }
+  }
+}
