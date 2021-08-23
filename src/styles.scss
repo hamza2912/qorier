@@ -70,7 +70,7 @@ $angular-multi-layout-scaffolding-theme: mat-light-theme((
 
 /* You can add global styles to this file, and also import other style files */
 html {
-  height: 100%;
+  overflow-x: hidden;
 }
 body {
   height: 100%;
@@ -79,7 +79,7 @@ body {
 /* Importing Bootstrap SCSS file. */
 // @import '~bootstrap/scss/bootstrap';
 
-html, body { height: 100%; }
+// html, body { height: 100%; }
 
 body {
   margin: 0;
