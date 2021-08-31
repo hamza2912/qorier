@@ -116,7 +116,10 @@
   .container-fluid {
       padding: 20px;
       min-height: calc(100vh - 180px);
-    }
+      @media screen and (max-width: 599px) {
+        padding: 10px 20px;
+      }
+  }
 
 h2{
     margin-top: 6%; margin-left: 6%;  text-align: left;
